@@ -34,7 +34,7 @@ function layout(path, data) {
   __eta.layoutData = data;
 }${config.debug ? "try {" : ""}${config.useWith ? "with(" + config.varName + "||{}){" : ""}
 
-${compileBody.call(this, buffer)}
+${this.compileBody.call(this, buffer)}
 if (__eta.layout) {
   __eta.res = ${isAsync ? "await includeAsync" : "include"} (__eta.layout, {...${
     config.varName
